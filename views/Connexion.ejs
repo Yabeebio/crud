@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+</head>
+<body>
+    <%- include('navbar') %>
+    <h1 class="text-center">Connexion</h1>
+
+    <form action="/api/Connexion" method="post">
+        <label for="">Username</label>
+        <input type="text" name="username">
+        <label for="">Password</label>
+        <input type="password" name="password">
+
+        <input type="submit" value="Se connecter">
+    </form>
+    <a href="/signin">Vous n'avez pas de compte</a>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier</title>
+</head>
+
+<body>
+    <%- include('navbar') %>
+        <form action="/modifier/<%= data._id %>?_method=PUT" method="post">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <input type="hidden" name="_method" value="PUT">
+                <br>
+                <label for="idUsername">Username</label>
+                <input style="width: 500px;" type="text" name="username" id="idUsername" value="<%= data.username %>">
+                <br>
+                <label for="idEmail">Email</label>
+                <input style="width: 500px;" type="email" name="email" id="idEmail" value="<%= data.email %>">
+                <br>
+                <label for="idPassword">Password</label>
+                <input style="width: 500px;" type="password" name="password" id="idPassword">
+                <br>
+                <label for="idNom">Nom</label>
+                <input style="width: 500px;" type="text" name="nom" id="idNom" value="<%= data.nom %>">
+                <br>
+                <label for="idPrenom">Prénom</label>
+                <input style="width: 500px;" type="text" name="prenom" id="idPrenom" value="<%= data.prenom %>">
+            </div>
+
+            <input class="btn btn-warning px-5 mt-5" type="submit" value="Modify" style="float: right; margin-right: 40%;">
+        </form>
+
+        <form action="/delete/<%= data._id %>?_method=DELETE" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="btn btn-danger px-5 mt-5" type="submit" value="Delete" style="text-align: center; margin-left: 40%;">
+        </form>
+</body>
+
+</html>

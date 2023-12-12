@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+<body>
+    <%- include('navbar') %>
+    <h1 class="text-center">Ajouter des voitures</h1>
+
+    <form action="/api/Ajouter" method="post">
+        <label for="">Marque</label>
+        <input type="text" name="marque">
+        <label for="">Modele</label>
+        <input type="text" name="modele">
+        <label for="">Prix</label>
+        <input type="number" name="prix">
+        <label for="">Description</label>
+        <textarea name="description" cols="15" rows="1"></textarea>
+
+        <input type="submit" value="Ajouter">
+
+    </form>
+</body>
+</html>

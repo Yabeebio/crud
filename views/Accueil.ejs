@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+
+<body>
+    <%- include('navbar') %>
+        <section class="mt-5 d-flex justify-content-around align-items-center">
+            <% data.forEach((cars)=>{ %>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= cars.marque %>
+                        </h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            <%= cars.modele %>
+                        </h6>
+                        <p class="card-text">
+                            <%= cars.description %>
+                        </p>
+                        <form action="/deletecars/<%= cars._id %>?_method=DELETE" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input class="btn btn-danger px-5 mt-5" type="submit" value="Delete">
+                        </form>
+                    </div>
+                </div>
+                <% }) %>
+        </section>
+        <a class="btn btn-success mt-5" style="float: right; margin-right: 10%;" href="/addCars">Ajouter des voitures</a>
+</body>
+
+</html>
